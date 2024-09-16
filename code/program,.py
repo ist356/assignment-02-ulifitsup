@@ -32,6 +32,7 @@ rfile = open("data/packaging.txt", "r")
 wfile = open("data/packaging.json", "w")
 packages = []
 for line in rfile:
+    line = line.strip()
     package = parse_packaging(line)
     total_units = calc_total_units(package)
     unit = get_unit(package)
